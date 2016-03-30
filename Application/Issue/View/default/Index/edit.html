@@ -3,13 +3,13 @@
     <link href="__CSS__/issue.css" rel="stylesheet" type="text/css"/>
 </block>
 <block name="body">
-    <div id="frm-post-popup" class="white-popup boxShadowBorder" style="max-width: 745px">
+    <div id="frm-post-popup" class="white-popup boxShadowBorder" style="max-width: 880px">
         <h2>{:L('_EDIT_')}</h2>
 
         <div class="aline" style="margin-bottom: 10px"></div>
         <div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="controls">
                         <input type="file" id="upload_picture_cover">
 
@@ -19,7 +19,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <form class="form-horizontal  ajax-form" role="form" action="{:U('Issue/Index/doPost')}"
                           method="post">
                         <div class="form-group">
@@ -92,7 +92,7 @@
                                 <php>
                                         $config="toolbars:[['source','|','bold','italic','underline','fontsize','forecolor','fontfamily','backcolor','|','link','emotion','scrawl','attachment','insertvideo','insertimage','insertcode']]";</php>
                                 </php>
-                                {:W('Common/Ueditor/editor',array('myeditor_edit','content',$content['content'],'378px','250px',$config))}
+                                {:W('Common/Ueditor/editor',array('myeditor_edit','content',$content['content'],'517px','250px',$config))}
                             </div>
                         </div>
                         <div class="form-group">
