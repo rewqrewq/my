@@ -115,7 +115,7 @@
         <nav class="" id="nav_bar_container">
             <?php $logo = get_cover(modC('LOGO',0,'Config'),'path'); $logo = $logo?$logo:'/my/Public/images/logo.png'; ?>
 
-            <a class="navbar-brand logo" href="<?php echo U('Home/Index/index');?>"><img src="<?php echo ($logo); ?>"/></a>
+            <a class="navbar-brand logo" href="<?php echo U('Home/Index/index');?>" style="padding:3px"><img src="<?php echo ($logo); ?>" style="height: 53px"/></a>
 
             <div class="" id="nav_bar_main">
 
