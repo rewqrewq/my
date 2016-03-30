@@ -3,7 +3,7 @@
         <div class=" block-body row">
             <div class="col-xs-12">
                 <div class="common-block">
-                    <h2><?php echo modC('ISSUE_SHOW_TITLE',L('_HOTTEST_').L('_MODULE_'),'Issue');?></h2>
+                    <h2 style="padding:7px"><?php echo modC('ISSUE_SHOW_TITLE',L('_HOTTEST_').L('_MODULE_'),'Issue');?></h2>
                     <div class="common-block-body">
                         <div class="issue_list">
                             <?php if(is_array($IssueContents)): $i = 0; $__LIST__ = $IssueContents;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="item_inner"  <?php if($i % 4 == 0): ?>style="margin-right:0"<?php endif; ?>>

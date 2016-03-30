@@ -19,7 +19,11 @@
                     <script type="text/javascript">
                         $(function () {
                             var h_s = "{$pos.height}";
-                            $("#slide_{$pos.id}").kinMaxShow({height: h_s});
+                            $("#slide_{$pos.id}").kinMaxShow({
+                            	height: h_s,
+                            	intervalTime: 2
+                            });
+                            
                             $("#slide_{$pos.id}").fadeIn();
                         })
                     </script>

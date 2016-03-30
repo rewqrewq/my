@@ -115,7 +115,7 @@
         <nav class="" id="nav_bar_container">
             <?php $logo = get_cover(modC('LOGO',0,'Config'),'path'); $logo = $logo?$logo:'/my/Public/images/logo.png'; ?>
 
-            <a class="navbar-brand logo" href="<?php echo U('Home/Index/index');?>" style="padding:3px"><img src="<?php echo ($logo); ?>" style="height: 53px"/></a>
+            <a class="navbar-brand logo" href="/" style="padding:3px"><img src="<?php echo ($logo); ?>" style="height: 47px"/></a>
 
             <div class="" id="nav_bar_main">
 
@@ -321,38 +321,30 @@
         <?php if(is_array($showBlocks)): $i = 0; $__LIST__ = $showBlocks;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if($v=='slider'){ ?>
             <div class="container">
                 <div class="row">
-
-                    <div class="col-xs-9">
+                    <div class="col-xs-8">
                         <?php echo W('Common/Adv/render',array(array('name'=>'slider','type'=>2,'width'=>'1120px','height'=>'300px','margin'=>'0 0 15px 0','title'=>'首页轮播图','data'=>array('style'=>1))));?>
                     </div>
-                    <div class="col-xs-3">
+                    <div class="col-xs-4">
 		                <div class="common-block" style="height: 300px">
-		                    <h2 style="padding: 3px"> 最新通告                    </h2>
-		
+		                    <h2 style="padding: 10px"> 最新通告                    </h2>
 		                    <div>
 		                        <div>
 		                            <ul class="user-list clearfix">
 		                                <li>
 		                                      www.YoYcn.com已通过备案<br>备案号： 京ICP备16014557号
-		                                 </li>
+		                                </li>
 		                            </ul>
 		                        </div>
 		                    </div>
 		                </div>
 		            </div>
                 </div>
-
-
             </div>
-
-
             <?php }else{ ?>
             <?php echo W($v.'/HomeBlock/render');?>
             <?php } endforeach; endif; else: echo "" ;endif; ?>
     </div>
 </div>
-
-
 
 
 <!-- /头部 -->
@@ -405,7 +397,7 @@
 
             <?php echo ($count_code); ?>
             <div>
-                Powered by <a href="http://www.opensns.cn">OpenSNS</a>
+                Powered by Alex
             </div>
 
         </div>
