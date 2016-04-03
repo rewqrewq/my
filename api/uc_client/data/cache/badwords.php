@@ -1,5 +1,5 @@
-<?php
-$_CACHE['badwords'] = array (
-);
-
+<?php
+$_CACHE['badwords'] = array (
+);
+
 ?>
