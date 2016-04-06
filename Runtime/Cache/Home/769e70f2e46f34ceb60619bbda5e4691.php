@@ -115,7 +115,7 @@
         <nav class="" id="nav_bar_container">
             <?php $logo = get_cover(modC('LOGO',0,'Config'),'path'); $logo = $logo?$logo:'/Public/images/logo.png'; ?>
 
-            <a class="navbar-brand logo" href="/" style="padding:3px"><img src="<?php echo ($logo); ?>" style="height: 47px"/></a>
+            <a class="navbar-brand logo" href="/"><img src="<?php echo ($logo); ?>" style="height: 47px"/></a>
 
             <div class="" id="nav_bar_main">
 
@@ -302,9 +302,7 @@
     });
 </script>
 <?php } ?>
-<!--顶部导航之后的钩子，调用公告等-->
-<?php echo hook('afterTop');?>
-<!--顶部导航之后的钩子，调用公告等 end-->
+
 
 
 

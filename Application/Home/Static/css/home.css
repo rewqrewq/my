@@ -120,7 +120,8 @@ a:hover {
 }
 .issue_list .item_core .cover {
   width: 280px;
-  height: 210px;
+  //height: 210px;
+	height: 140px;
 }
 .weibo-list .weibo_content {
   border: none;
