@@ -1,6 +1,6 @@
 <?php if (!defined('THINK_PATH')) exit();?><div id="adv_<?php echo ($pos["id"]); ?>" class="adv-wrap" style="padding: <?php echo ($pos["padding"]); ?>;margin:<?php echo ($pos["margin"]); ?>;">
     <div class="text-left " style="width:<?php echo ($pos["width"]); ?>;height:<?php echo ($pos["height"]); ?>;">
-        <?php if(count($list) > 0): switch($pos["style"]): case "2": ?><script src="/Public/js/ext/kinmaxshow/js/kinmaxshow.min.js"></script>
+        <?php if(count($list) > 0): switch($pos["style"]): case "2": ?><script src="/my/Public/js/ext/kinmaxshow/js/kinmaxshow.min.js"></script>
                     <div style="width:<?php echo ($pos["width"]); ?>;height:<?php echo ($pos["height"]); ?>">
                         <div id="slide_<?php echo ($pos["id"]); ?>" style="display: none">
                             <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div>
@@ -23,8 +23,8 @@
                         })
                     </script><?php break;?>
                 <?php default: ?>
-                <script src="/Public/js/ext/touchslide/js/jquery.touchSlider.js"></script>
-                <link href="/Public/js/ext/touchslide/css/touchslider.css" rel="stylesheet" type="text/css"/>
+                <script src="/my/Public/js/ext/touchslide/js/jquery.touchSlider.js"></script>
+                <link href="/my/Public/js/ext/touchslide/css/touchslider.css" rel="stylesheet" type="text/css"/>
                 <div class="main_visual"  style="height: <?php echo ($pos["height"]); ?>;width:<?php echo ($pos["width"]); ?>;display: none">
                     <div class="flicking_con">
                         <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><a href="#"></a><?php endforeach; endif; else: echo "" ;endif; ?>

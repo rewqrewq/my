@@ -1,6 +1,6 @@
 <?php if (!defined('THINK_PATH')) exit();?><div id="sub_nav">
     <nav class="navbar navbar-default" role="navigation">
-        <div class="container" style="width:1180px;">
+        <div class="container">
             <a href="<?php echo U($MODULE_INFO['entry']);?>" class="navbar-brand logo"><i class="icon-<?php echo ($brand["icon"]); ?>"></i>
 
                 <?php if(empty($menu_list["first"]["title"])): echo ($brand["title"]); ?>

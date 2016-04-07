@@ -3,12 +3,12 @@
         <div class=" block-body row">
             <div class="col-xs-12">
                 <div class="common-block">
-                    <h2>{:modC('NEWS_SHOW_TITLE','最热资讯','News')}</h2>
+                    <h2><i class="icon-rss-sign app-icon "></i> {:modC('NEWS_SHOW_TITLE','最热资讯','News')}</h2>
 
                     <div class="common-block-body">
                         <div class="news_list">
                             <volist name="news_lists" id="data">
-                                <div class="col-xs-6" style="position: relative">
+                                <div class="col-xs-12 col-lg-6" style="position: relative">
                                     <hr/>
                                     <if condition="$data['cover'] neq 0">
                                         <div class="col-xs-4">
@@ -56,7 +56,7 @@
                                         </div>
                                     </if>
                                     <span class="pull-right" style="position: absolute;right: 0;bottom: 0">
-                                        &nbsp;&nbsp;<span><i class="icon-eye-open"></i>  {$data.view} </span>&nbsp;&nbsp;
+                                        &nbsp;&nbsp;<span style="color: #ccc"><i class="icon-eye-open"></i>  {$data.view} </span>&nbsp;&nbsp;
                                     </span>
                                 </div>
                             </volist>

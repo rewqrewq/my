@@ -3,11 +3,11 @@
         <div class=" block-body row">
             <div class="col-xs-12">
                 <div class="common-block">
-                    <h2><?php echo modC('NEWS_SHOW_TITLE','最热资讯','News');?></h2>
+                    <h2><i class="icon-rss-sign app-icon "></i> <?php echo modC('NEWS_SHOW_TITLE','最热资讯','News');?></h2>
 
                     <div class="common-block-body">
                         <div class="news_list">
-                            <?php if(is_array($news_lists)): $i = 0; $__LIST__ = $news_lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?><div class="col-xs-6" style="position: relative">
+                            <?php if(is_array($news_lists)): $i = 0; $__LIST__ = $news_lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?><div class="col-xs-12 col-lg-6" style="position: relative">
                                     <hr/>
                                     <?php if($data['cover'] != 0): ?><div class="col-xs-4">
                                             <a title="<?php echo (op_t($data["title"])); ?>"
@@ -53,7 +53,7 @@
                                             </div>
                                         </div><?php endif; ?>
                                     <span class="pull-right" style="position: absolute;right: 0;bottom: 0">
-                                        &nbsp;&nbsp;<span><i class="icon-eye-open"></i>  <?php echo ($data["view"]); ?> </span>&nbsp;&nbsp;
+                                        &nbsp;&nbsp;<span style="color: #ccc"><i class="icon-eye-open"></i>  <?php echo ($data["view"]); ?> </span>&nbsp;&nbsp;
                                     </span>
                                 </div><?php endforeach; endif; else: echo "" ;endif; ?>
                             <div class="clearfix"></div>

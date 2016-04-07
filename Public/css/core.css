@@ -847,7 +847,7 @@ ul {
 .nav_bar .navbar-nav > li > a {
   line-height: 50px;
   font-size: 14px;
-  padding: 0 15px;
+  padding: 0 10px;
   color: #333333;
 }
 .nav_bar .navbar-nav > li > a i {
@@ -866,9 +866,9 @@ ul {
   color: white;
   margin-top: 12px;
 }
-.nav_bar .navbar-toggle .icon-bar {
+/* .nav_bar .navbar-toggle .icon-bar {
   background: white;
-}
+} */
 .nav_bar .badge {
   margin-left: 5px;
 }
@@ -891,8 +891,8 @@ ul {
   background: none;
 }
 .container {
-  width: 1140px;
-  max-width: 1140px;
+  /* width: 1140px;
+  max-width: 1140px; */
 }
 a {
   color: #333;
@@ -932,7 +932,7 @@ body {
   text-align: right;
 }
 .navbar-collapse.collapse {
-  display: block !important;
+  /* display: block !important; */
   height: auto !important;
   padding-bottom: 0;
   overflow: visible !important;

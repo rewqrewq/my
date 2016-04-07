@@ -9,7 +9,7 @@
 
         <div class="reply-form">
 
-            <div class="col-xs-2" style="width:80px;">
+            <div class="col-xs-2" >
                 <?php if(is_login()){ ?>
                 <a href="<?php echo ($myInfo["space_url"]); ?>" class="avatar"><img src="<?php echo ($myInfo["avatar64"]); ?>" ucard="<?php echo ($myInfo["uid"]); ?>"
                                                                   class="avatar-img"/></a>

@@ -1,16 +1,17 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
-<html>
-<head>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
+<html>
+<head>
 	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <?php echo hook('syncMeta');?>
 
-<?php $oneplus_seo_meta = get_seo_meta($vars,$seo); ?>
-<?php if($oneplus_seo_meta['title']): ?><title><?php echo ($oneplus_seo_meta['title']); ?></title>
-    <?php else: ?>
-    <title><?php echo modC('WEB_SITE_NAME',L('_OPEN_SNS_'),'Config');?></title><?php endif; ?>
-<?php if($oneplus_seo_meta['keywords']): ?><meta name="keywords" content="<?php echo ($oneplus_seo_meta['keywords']); ?>"/><?php endif; ?>
+<?php $oneplus_seo_meta = get_seo_meta($vars,$seo); ?>
+<?php if($oneplus_seo_meta['title']): ?><title><?php echo ($oneplus_seo_meta['title']); ?></title>
+    <?php else: ?>
+    <title><?php echo modC('WEB_SITE_NAME',L('_OPEN_SNS_'),'Config');?></title><?php endif; ?>
+<?php if($oneplus_seo_meta['keywords']): ?><meta name="keywords" content="<?php echo ($oneplus_seo_meta['keywords']); ?>"/><?php endif; ?>
 <?php if($oneplus_seo_meta['description']): ?><meta name="description" content="<?php echo ($oneplus_seo_meta['description']); ?>"/><?php endif; ?>
 
 <!-- zui -->
@@ -31,30 +32,30 @@
     <link href="/my/Application/Paper/Static/css/paper.css" type="text/css" rel="stylesheet">
 
 <!--合并前的js-->
-<?php $config = api('Config/lists'); C($config); $count_code=C('COUNT_CODE'); ?>
-<script type="text/javascript">
-    var ThinkPHP = window.Think = {
-        "ROOT": "/my", //当前网站地址
-        "APP": "/my/index.php?s=", //当前项目地址
-        "PUBLIC": "/my/Public", //项目公共目录地址
-        "DEEP": "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
-        "MODEL": ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
-        "VAR": ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"],
-        'URL_MODEL': "<?php echo C('URL_MODEL');?>",
-        'WEIBO_ID': "<?php echo C('SHARE_WEIBO_ID');?>"
-    }
-    var cookie_config={
-        "prefix":"<?php echo C('COOKIE_PREFIX');?>"
-    }
-    var Config={
-        'GET_INFORMATION':<?php echo modC('GET_INFORMATION',1,'Config');?>,
-        'GET_INFORMATION_INTERNAL':<?php echo modC('GET_INFORMATION_INTERNAL',10,'Config');?>*1000
-    }
-    var weibo_comment_order = "<?php echo modC('COMMENT_ORDER',0,'WEIBO');?>";
-</script>
-
-<script src="/my/Public/lang.php?module=<?php echo strtolower(MODULE_NAME);?>&lang=<?php echo LANG_SET;?>"></script>
-
+<?php $config = api('Config/lists'); C($config); $count_code=C('COUNT_CODE'); ?>
+<script type="text/javascript">
+    var ThinkPHP = window.Think = {
+        "ROOT": "/my", //当前网站地址
+        "APP": "/my/index.php?s=", //当前项目地址
+        "PUBLIC": "/my/Public", //项目公共目录地址
+        "DEEP": "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
+        "MODEL": ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
+        "VAR": ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"],
+        'URL_MODEL': "<?php echo C('URL_MODEL');?>",
+        'WEIBO_ID': "<?php echo C('SHARE_WEIBO_ID');?>"
+    }
+    var cookie_config={
+        "prefix":"<?php echo C('COOKIE_PREFIX');?>"
+    }
+    var Config={
+        'GET_INFORMATION':<?php echo modC('GET_INFORMATION',1,'Config');?>,
+        'GET_INFORMATION_INTERNAL':<?php echo modC('GET_INFORMATION_INTERNAL',10,'Config');?>*1000
+    }
+    var weibo_comment_order = "<?php echo modC('COMMENT_ORDER',0,'WEIBO');?>";
+</script>
+
+<script src="/my/Public/lang.php?module=<?php echo strtolower(MODULE_NAME);?>&lang=<?php echo LANG_SET;?>"></script>
+
 <script src="/my/Public/expression.php"></script>
 
 <!-- Bootstrap库 -->
@@ -89,14 +90,14 @@
 
 <audio id="music" src="" autoplay="autoplay"></audio>
 <!-- 页面header钩子，一般用于加载插件CSS文件和代码 -->
-<?php echo hook('pageHeader');?>
-</head>
-<body>
-	<!-- 头部 -->
-	<script src="/my/Public/js/com/com.talker.class.js"></script>
-<?php if((is_login()) ): ?><div id="talker">
-
-    </div><?php endif; ?>
+<?php echo hook('pageHeader');?>
+</head>
+<body>
+	<!-- 头部 -->
+	<script src="/my/Public/js/com/com.talker.class.js"></script>
+<?php if((is_login()) ): ?><div id="talker">
+
+    </div><?php endif; ?>
 
 <?php D('Common/Member')->need_login(); ?>
 <!--[if lt IE 8]>
@@ -113,14 +114,14 @@
 
     <div class="container">
 
-        <nav class="" id="nav_bar_container">
+        <nav class="collapse navbar-collapse" id="nav_bar_container">
             <?php $logo = get_cover(modC('LOGO',0,'Config'),'path'); $logo = $logo?$logo:'/my/Public/images/logo.png'; ?>
 
-            <a class="navbar-brand logo" href="<?php echo U('Home/Index/index');?>" style="padding:3px"><img src="<?php echo ($logo); ?>" style="height: 53px"/></a>
+            <!-- <a class="navbar-brand logo" href="/"><img src="<?php echo ($logo); ?>" style="height: 47px"/></a> -->
 
-            <div class="" id="nav_bar_main">
-
-                <ul class="nav navbar-nav navbar-left">
+            <div class="collapse navbar-collapse" id="nav_bar_main">
+ 				<ul class="nav navbar-nav">
+                	<a class="navbar-brand logo" href="/"><img src="<?php echo ($logo); ?>" style="height: 47px"/></a>
                     <?php $__NAV__ = D('Channel')->lists(true);$__NAV__ = list_to_tree($__NAV__, "id", "pid", "_"); if(is_array($__NAV__)): $i = 0; $__LIST__ = $__NAV__;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$nav): $mod = ($i % 2 );++$i; if(($nav['_']) != ""): ?><li class="dropdown">
                                 <a title="<?php echo ($nav["title"]); ?>" class="dropdown-toggle nav_item" data-toggle="dropdown"
                                    href="#"><i
@@ -282,46 +283,47 @@
         </nav>
     </div>
 </div>
-<!--换肤插件钩子-->
-<?php echo hook('setSkin');?>
-<!--换肤插件钩子 end-->
-<div id="tool" class="tool ">
-    <?php echo hook('tool');?>
-    <?php if(check_auth('Core/Admin/View')): ?><!--  <a href="javascript:;" class="admin-view"></a>--><?php endif; ?>
-    <a  id="go-top" href="javascript:;" class="go-top "></a>
-
-</div>
-<?php if(is_login()&&(get_login_role_audit()==2||get_login_role_audit()==0)){ ?>
-<div id="top-role-tip" class="alert alert-danger">
-    <?php echo L('_TIP_ROLE_NOT_AUDITED1_');?> <strong><?php echo L('_TIP_ROLE_NOT_AUDITED2_');?></strong><?php echo L('_TIP_ROLE_NOT_AUDITED3_');?>
-    <a target="_blank" href="<?php echo U('ucenter/config/role');?>"><?php echo L('_TIP_ROLE_NOT_AUDITED4_');?></a>
-</div>
-<script>
-    $(function () {
-        $('#top-role-tip').css('margin-top', $('#nav_bar').height() + 15);
-        $('#top-role-tip').css('margin-bottom', -$('#nav_bar').height()+15);
-    });
-</script>
-<?php } ?>
-<!--顶部导航之后的钩子，调用公告等-->
-<?php echo hook('afterTop');?>
-<!--顶部导航之后的钩子，调用公告等 end-->
+<!--换肤插件钩子-->
+<?php echo hook('setSkin');?>
+<!--换肤插件钩子 end-->
+<div id="tool" class="tool ">
+    <?php echo hook('tool');?>
+    <?php if(check_auth('Core/Admin/View')): ?><!--  <a href="javascript:;" class="admin-view"></a>--><?php endif; ?>
+    <a  id="go-top" href="javascript:;" class="go-top "></a>
+
+</div>
+<?php if(is_login()&&(get_login_role_audit()==2||get_login_role_audit()==0)){ ?>
+<div id="top-role-tip" class="alert alert-danger">
+    <?php echo L('_TIP_ROLE_NOT_AUDITED1_');?> <strong><?php echo L('_TIP_ROLE_NOT_AUDITED2_');?></strong><?php echo L('_TIP_ROLE_NOT_AUDITED3_');?>
+    <a target="_blank" href="<?php echo U('ucenter/config/role');?>"><?php echo L('_TIP_ROLE_NOT_AUDITED4_');?></a>
+</div>
+<script>
+    $(function () {
+        $('#top-role-tip').css('margin-top', $('#nav_bar').height() + 15);
+        $('#top-role-tip').css('margin-bottom', -$('#nav_bar').height()+15);
+    });
+</script>
+<?php } ?>
 
 
 
-	<!-- /头部 -->
-	
-	<!-- 主体 -->
-	<div class="main-wrapper">
+
+	<!-- /头部 -->
+	
+	<!-- 主体 -->
+	<div class="main-wrapper">
     
     <?php echo W('Common/SubMenu/render',array($sub_menu,$current,$MODULE_ALIAS,''));?>
-
-    <div id="main-container" class="container">
-        <div class="row">
+
+    <!--顶部导航之后的钩子，调用公告等-->
+<?php echo hook('afterTop');?>
+<!--顶部导航之后的钩子，调用公告等 end-->
+    <div id="main-container" class="container">
+        <div class="row">
             
     <div class="clearfix ">
         
-        <div class="col-xs-3">
+        <div class="col-lg-3 visible-lg">
             <div class="common_block_border">
 
                 <div class="content ">
@@ -371,7 +373,7 @@
             </script>
 
         </div>
-        <div class="col-xs-9">
+        <div class="col-xs-12 col-lg-9">
             <div class="common_block_border">
                 <div class="right_title">
                     <?php if(isset($cate)): ?><span><?php echo ($cate["title"]); ?>></span><?php endif; ?>
@@ -383,18 +385,18 @@
         <div class="clearfix"></div>
     </div>
     </div>
-
-        </div>
-    </div>
-</div>
-	<!-- /主体 -->
-
-	<!-- 底部 -->
+
+        </div>
+    </div>
+</div>
+	<!-- /主体 -->
+
+	<!-- 底部 -->
 	<div class="footer-bar ">
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-4">
+            <div class="col-lg-4 visible-lg">
 
                 <h2>
                     <i class="icon-location-arrow"></i> <?php echo L('_ABOUT_US_');?>
@@ -403,7 +405,7 @@
                     <?php echo modC('ABOUT_US',L('_NOT_SET_NOW_'),'Config');?>
                 </p>
             </div>
-            <div class="col-xs-4">
+            <div class="col-lg-4 col-xs-12 text-center">
                 <h2>
                     <i class="icon-star-empty"></i> <?php echo L('_FOLLOW_US_');?>
                 </h2>
@@ -411,7 +413,7 @@
                     <?php echo modC('SUBSCRIB_US',L('_NOT_SET_NOW_'),'Config');?>
                 </p>
             </div>
-            <div class="col-xs-4">
+            <div class="col-lg-4 visible-lg">
                 <h2>
                     <i class="icon-link"></i> <?php echo L('_FRIENDLY_LINK_');?>
                 </h2>
@@ -433,7 +435,7 @@
 
             <?php echo ($count_code); ?>
             <div>
-                Powered by <a href="http://www.opensns.cn">OpenSNS</a>
+                Powered by Alex
             </div>
 
         </div>
@@ -441,32 +443,32 @@
 
 </div>
 
-<!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
-
-
-<!-- 为了让html5shiv生效，请将所有的CSS都添加到此处 -->
-<link type="text/css" rel="stylesheet" href="/my/Public/static/qtip/jquery.qtip.css"/>
-
-
-<!--<script type="text/javascript" src="/my/Public/js/com/com.notify.class.js"></script>-->
-
-<!-- 其他库-->
-<!--<script src="/my/Public/static/qtip/jquery.qtip.js"></script>
-<script type="text/javascript" src="/my/Public/js/ext/slimscroll/jquery.slimscroll.min.js"></script>
-<script type="text/javascript" src="/my/Public/static/jquery.iframe-transport.js"></script>
-
-<script type="text/javascript" src="/my/Public/js/ext/magnific/jquery.magnific-popup.min.js"></script>-->
-
-<!--<script type="text/javascript" src="/my/Public/js/ext/placeholder/placeholder.js"></script>
-<script type="text/javascript" src="/my/Public/js/ext/atwho/atwho.js"></script>
-<script type="text/javascript" src="/my/Public/zui/js/zui.js"></script>-->
-<link type="text/css" rel="stylesheet" href="/my/Public/js/ext/atwho/atwho.css"/>
-
-<script src="/my/Public/js.php?t=js&f=js/com/com.notify.class.js,static/qtip/jquery.qtip.js,js/ext/slimscroll/jquery.slimscroll.min.js,js/ext/magnific/jquery.magnific-popup.min.js,js/ext/placeholder/placeholder.js,js/ext/atwho/atwho.js,zui/js/zui.js&v=<?php echo ($site["sys_version"]); ?>.js"></script>
-<script type="text/javascript" src="/my/Public/static/jquery.iframe-transport.js"></script>
-
-<script src="/my/Public/js/ext/lazyload/lazyload.js"></script>
-
+<!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+
+
+<!-- 为了让html5shiv生效，请将所有的CSS都添加到此处 -->
+<link type="text/css" rel="stylesheet" href="/my/Public/static/qtip/jquery.qtip.css"/>
+
+
+<!--<script type="text/javascript" src="/my/Public/js/com/com.notify.class.js"></script>-->
+
+<!-- 其他库-->
+<!--<script src="/my/Public/static/qtip/jquery.qtip.js"></script>
+<script type="text/javascript" src="/my/Public/js/ext/slimscroll/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="/my/Public/static/jquery.iframe-transport.js"></script>
+
+<script type="text/javascript" src="/my/Public/js/ext/magnific/jquery.magnific-popup.min.js"></script>-->
+
+<!--<script type="text/javascript" src="/my/Public/js/ext/placeholder/placeholder.js"></script>
+<script type="text/javascript" src="/my/Public/js/ext/atwho/atwho.js"></script>
+<script type="text/javascript" src="/my/Public/zui/js/zui.js"></script>-->
+<link type="text/css" rel="stylesheet" href="/my/Public/js/ext/atwho/atwho.css"/>
+
+<script src="/my/Public/js.php?t=js&f=js/com/com.notify.class.js,static/qtip/jquery.qtip.js,js/ext/slimscroll/jquery.slimscroll.min.js,js/ext/magnific/jquery.magnific-popup.min.js,js/ext/placeholder/placeholder.js,js/ext/atwho/atwho.js,zui/js/zui.js&v=<?php echo ($site["sys_version"]); ?>.js"></script>
+<script type="text/javascript" src="/my/Public/static/jquery.iframe-transport.js"></script>
+
+<script src="/my/Public/js/ext/lazyload/lazyload.js"></script>
+
 
 
 <!-- 用于加载js代码 -->
@@ -476,7 +478,7 @@
 <div class="hidden"><!-- 用于加载统计代码等隐藏元素 -->
     
 </div>
-
-	<!-- /底部 -->
-</body>
+
+	<!-- /底部 -->
+</body>
 </html>

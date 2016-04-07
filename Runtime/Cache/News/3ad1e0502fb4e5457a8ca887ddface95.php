@@ -8,18 +8,17 @@
     <footer class="clearfix">
 
         <div class="reply-form">
-            <?php if(is_login()){ ?>
-            <div class="col-xs-2" style="width:80px;">
+
+            <div class="col-xs-2" >
+                <?php if(is_login()){ ?>
                 <a href="<?php echo ($myInfo["space_url"]); ?>" class="avatar"><img src="<?php echo ($myInfo["avatar64"]); ?>" ucard="<?php echo ($myInfo["uid"]); ?>"
                                                                   class="avatar-img"/></a>
-                <?php }elseif($can_guest){ ?>
-                <a href="javascript:" title="游客" class="avatar"><i class="icon-user icon-border icon-2x icon-muted"
-                                                                   style="color:#999;width: 64px;text-align:center;display:block;"></i></a>
+
                 <?php } ?>
             </div>
 
 
-            <?php if($can_guest || is_login()){ ?>
+            <?php if(is_login()){ ?>
 
             <div class="form col-xs-10">
                 <div style="border: 3px solid #ddd; " class="clearfix">
@@ -31,7 +30,7 @@
                     <div class="clearfix" style="background: #eee">
                         <div class="pull-left">
                             <!-- <a href="javascript:" onclick="insertFace($(this))">
-                                 <img class="weibo_type_icon" src="/Application/Core/Static/images/bq.png"/>
+                                 <img class="weibo_type_icon" src="/my/Application/Core/Static/images/bq.png"/>
                              </a>-->
                         </div>
                         <div class="pull-right">
@@ -89,8 +88,10 @@
             <?php echo (parse_comment_content($comment["content"])); ?>
         </p>
         <div class="actions text-right">
+            <?php if(is_login()){ ?>
             <?php if($comment['uid']){ ?>
             <a href="javascript:" data-role="reply_local_comment" data-nickname="<?php echo ($comment["user"]["real_nickname"]); ?>">回复</a>
+            <?php } ?>
 
             <?php if(check_auth('deleteLocalComment',$comment['uid'])){ ?>
             <a href="javascript:" data-role="delete_local_comment" data-id="<?php echo ($comment["id"]); ?>">删除</a>

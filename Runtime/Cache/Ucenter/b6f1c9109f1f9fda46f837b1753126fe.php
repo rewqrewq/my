@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <?php echo hook('syncMeta');?>
@@ -14,29 +15,29 @@
 <?php if($oneplus_seo_meta['description']): ?><meta name="description" content="<?php echo ($oneplus_seo_meta['description']); ?>"/><?php endif; ?>
 
 <!-- zui -->
-<link href="/Public/zui/css/zui.css" rel="stylesheet">
+<link href="/my/Public/zui/css/zui.css" rel="stylesheet">
 
-<link href="/Public/zui/css/zui-theme.css" rel="stylesheet">
-<link href="/Public/css/core.css" rel="stylesheet"/>
-<link type="text/css" rel="stylesheet" href="/Public/js/ext/magnific/magnific-popup.css"/>
-<!--<script src="/Public/js/jquery-2.0.3.min.js"></script>
-<script type="text/javascript" src="/Public/js/com/com.functions.js"></script>
+<link href="/my/Public/zui/css/zui-theme.css" rel="stylesheet">
+<link href="/my/Public/css/core.css" rel="stylesheet"/>
+<link type="text/css" rel="stylesheet" href="/my/Public/js/ext/magnific/magnific-popup.css"/>
+<!--<script src="/my/Public/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="/my/Public/js/com/com.functions.js"></script>
 
-<script type="text/javascript" src="/Public/js/core.js"></script>-->
-<script src="/Public/js.php?f=js/jquery-2.0.3.min.js,js/com/com.functions.js,js/core.js,js/com/com.toast.class.js,js/com/com.ucard.js"></script>
+<script type="text/javascript" src="/my/Public/js/core.js"></script>-->
+<script src="/my/Public/js.php?f=js/jquery-2.0.3.min.js,js/com/com.functions.js,js/core.js,js/com/com.toast.class.js,js/com/com.ucard.js"></script>
 
 
 
 
-    <link href="/Application/Ucenter/Static/css/usercenter.css" rel="stylesheet" type="text/css"/>
+    <link href="/my/Application/Ucenter/Static/css/usercenter.css" rel="stylesheet" type="text/css"/>
 
 <!--合并前的js-->
 <?php $config = api('Config/lists'); C($config); $count_code=C('COUNT_CODE'); ?>
 <script type="text/javascript">
     var ThinkPHP = window.Think = {
-        "ROOT": "", //当前网站地址
-        "APP": "/index.php?s=", //当前项目地址
-        "PUBLIC": "/Public", //项目公共目录地址
+        "ROOT": "/my", //当前网站地址
+        "APP": "/my/index.php?s=", //当前项目地址
+        "PUBLIC": "/my/Public", //项目公共目录地址
         "DEEP": "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
         "MODEL": ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
         "VAR": ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"],
@@ -53,29 +54,29 @@
     var weibo_comment_order = "<?php echo modC('COMMENT_ORDER',0,'WEIBO');?>";
 </script>
 
-<script src="/Public/lang.php?module=<?php echo strtolower(MODULE_NAME);?>&lang=<?php echo LANG_SET;?>"></script>
+<script src="/my/Public/lang.php?module=<?php echo strtolower(MODULE_NAME);?>&lang=<?php echo LANG_SET;?>"></script>
 
-<script src="/Public/expression.php"></script>
+<script src="/my/Public/expression.php"></script>
 
 <!-- Bootstrap库 -->
 <!--
 <?php $js[]=urlencode('/static/bootstrap/js/bootstrap.min.js'); ?>
 
 &lt;!&ndash; 其他库 &ndash;&gt;
-<script src="/Public/static/qtip/jquery.qtip.js"></script>
-<script type="text/javascript" src="/Public/Core/js/ext/slimscroll/jquery.slimscroll.min.js"></script>
-<script type="text/javascript" src="/Public/static/jquery.iframe-transport.js"></script>
+<script src="/my/Public/static/qtip/jquery.qtip.js"></script>
+<script type="text/javascript" src="/my/Public/Core/js/ext/slimscroll/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="/my/Public/static/jquery.iframe-transport.js"></script>
 -->
 <!--CNZZ广告管家，可自行更改-->
 <!--<script type='text/javascript' src='http://js.adm.cnzz.net/js/abase.js'></script>-->
 <!--CNZZ广告管家，可自行更改end-->
 <!-- 自定义js -->
-<!--<script src="/Public/js.php?get=<?php echo implode(',',$js);?>"></script>-->
+<!--<script src="/my/Public/js.php?get=<?php echo implode(',',$js);?>"></script>-->
 
 
 <script>
     //全局内容的定义
-    var _ROOT_ = "";
+    var _ROOT_ = "/my";
     var MID = "<?php echo is_login();?>";
     var MODULE_NAME="<?php echo MODULE_NAME; ?>";
     var ACTION_NAME="<?php echo ACTION_NAME; ?>";
@@ -93,7 +94,7 @@
 </head>
 <body>
 	<!-- 头部 -->
-	<script src="/Public/js/com/com.talker.class.js"></script>
+	<script src="/my/Public/js/com/com.talker.class.js"></script>
 <?php if((is_login()) ): ?><div id="talker">
 
     </div><?php endif; ?>
@@ -113,14 +114,14 @@
 
     <div class="container">
 
-        <nav class="" id="nav_bar_container">
-            <?php $logo = get_cover(modC('LOGO',0,'Config'),'path'); $logo = $logo?$logo:'/Public/images/logo.png'; ?>
+        <nav class="collapse navbar-collapse" id="nav_bar_container">
+            <?php $logo = get_cover(modC('LOGO',0,'Config'),'path'); $logo = $logo?$logo:'/my/Public/images/logo.png'; ?>
 
-            <a class="navbar-brand logo" href="/" style="padding:3px"><img src="<?php echo ($logo); ?>" style="height: 47px"/></a>
+            <!-- <a class="navbar-brand logo" href="/"><img src="<?php echo ($logo); ?>" style="height: 47px"/></a> -->
 
-            <div class="" id="nav_bar_main">
-
-                <ul class="nav navbar-nav navbar-left">
+            <div class="collapse navbar-collapse" id="nav_bar_main">
+ 				<ul class="nav navbar-nav">
+                	<a class="navbar-brand logo" href="/"><img src="<?php echo ($logo); ?>" style="height: 47px"/></a>
                     <?php $__NAV__ = D('Channel')->lists(true);$__NAV__ = list_to_tree($__NAV__, "id", "pid", "_"); if(is_array($__NAV__)): $i = 0; $__LIST__ = $__NAV__;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$nav): $mod = ($i % 2 );++$i; if(($nav['_']) != ""): ?><li class="dropdown">
                                 <a title="<?php echo ($nav["title"]); ?>" class="dropdown-toggle nav_item" data-toggle="dropdown"
                                    href="#"><i
@@ -303,9 +304,7 @@
     });
 </script>
 <?php } ?>
-<!--顶部导航之后的钩子，调用公告等-->
-<?php echo hook('afterTop');?>
-<!--顶部导航之后的钩子，调用公告等 end-->
+
 
 
 
@@ -316,6 +315,9 @@
     
     <br/>
 
+    <!--顶部导航之后的钩子，调用公告等-->
+<?php echo hook('afterTop');?>
+<!--顶部导航之后的钩子，调用公告等 end-->
     <div id="main-container" class="container">
         <div class="row">
             
@@ -324,8 +326,8 @@
             <div class="uc_top_bg">
     <?php if($user_info['cover_id']): ?><img class="uc_top_img_bg" src="<?php echo ($user_info['cover_path']); ?>" style="width: 100%;height: 100%">
         <?php else: ?>
-        <img class="uc_top_img_bg" src="/Application/Ucenter/Static/images/user_top_default_bg.jpg" style="width: 100%;height: 100%"><?php endif; ?>
-    <?php if(is_login() && $user_info['uid'] == is_login()): ?><div class="change_cover"><a data-type="ajax" data-url="<?php echo U('Ucenter/Public/changeCover');?>" data-toggle="modal" data-title="<?php echo L('_UPLOAD_PERSONAL_COVER_');?>" style="color: white;"><img class="img-responsive" src="/Application/Core/Static/images/fractional.png"></a>
+        <img class="uc_top_img_bg" src="/my/Application/Ucenter/Static/images/user_top_default_bg.jpg" style="width: 100%;height: 100%"><?php endif; ?>
+    <?php if(is_login() && $user_info['uid'] == is_login()): ?><div class="change_cover"><a data-type="ajax" data-url="<?php echo U('Ucenter/Public/changeCover');?>" data-toggle="modal" data-title="<?php echo L('_UPLOAD_PERSONAL_COVER_');?>" style="color: white;"><img class="img-responsive" src="/my/Application/Core/Static/images/fractional.png"></a>
         </div><?php endif; ?>
 </div>
 <div class="row uc_info">
@@ -536,7 +538,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-4">
+            <div class="col-lg-4 visible-lg">
 
                 <h2>
                     <i class="icon-location-arrow"></i> <?php echo L('_ABOUT_US_');?>
@@ -545,7 +547,7 @@
                     <?php echo modC('ABOUT_US',L('_NOT_SET_NOW_'),'Config');?>
                 </p>
             </div>
-            <div class="col-xs-4">
+            <div class="col-lg-4 col-xs-12 text-center">
                 <h2>
                     <i class="icon-star-empty"></i> <?php echo L('_FOLLOW_US_');?>
                 </h2>
@@ -553,7 +555,7 @@
                     <?php echo modC('SUBSCRIB_US',L('_NOT_SET_NOW_'),'Config');?>
                 </p>
             </div>
-            <div class="col-xs-4">
+            <div class="col-lg-4 visible-lg">
                 <h2>
                     <i class="icon-link"></i> <?php echo L('_FRIENDLY_LINK_');?>
                 </h2>
@@ -587,27 +589,27 @@
 
 
 <!-- 为了让html5shiv生效，请将所有的CSS都添加到此处 -->
-<link type="text/css" rel="stylesheet" href="/Public/static/qtip/jquery.qtip.css"/>
+<link type="text/css" rel="stylesheet" href="/my/Public/static/qtip/jquery.qtip.css"/>
 
 
-<!--<script type="text/javascript" src="/Public/js/com/com.notify.class.js"></script>-->
+<!--<script type="text/javascript" src="/my/Public/js/com/com.notify.class.js"></script>-->
 
 <!-- 其他库-->
-<!--<script src="/Public/static/qtip/jquery.qtip.js"></script>
-<script type="text/javascript" src="/Public/js/ext/slimscroll/jquery.slimscroll.min.js"></script>
-<script type="text/javascript" src="/Public/static/jquery.iframe-transport.js"></script>
+<!--<script src="/my/Public/static/qtip/jquery.qtip.js"></script>
+<script type="text/javascript" src="/my/Public/js/ext/slimscroll/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="/my/Public/static/jquery.iframe-transport.js"></script>
 
-<script type="text/javascript" src="/Public/js/ext/magnific/jquery.magnific-popup.min.js"></script>-->
+<script type="text/javascript" src="/my/Public/js/ext/magnific/jquery.magnific-popup.min.js"></script>-->
 
-<!--<script type="text/javascript" src="/Public/js/ext/placeholder/placeholder.js"></script>
-<script type="text/javascript" src="/Public/js/ext/atwho/atwho.js"></script>
-<script type="text/javascript" src="/Public/zui/js/zui.js"></script>-->
-<link type="text/css" rel="stylesheet" href="/Public/js/ext/atwho/atwho.css"/>
+<!--<script type="text/javascript" src="/my/Public/js/ext/placeholder/placeholder.js"></script>
+<script type="text/javascript" src="/my/Public/js/ext/atwho/atwho.js"></script>
+<script type="text/javascript" src="/my/Public/zui/js/zui.js"></script>-->
+<link type="text/css" rel="stylesheet" href="/my/Public/js/ext/atwho/atwho.css"/>
 
-<script src="/Public/js.php?t=js&f=js/com/com.notify.class.js,static/qtip/jquery.qtip.js,js/ext/slimscroll/jquery.slimscroll.min.js,js/ext/magnific/jquery.magnific-popup.min.js,js/ext/placeholder/placeholder.js,js/ext/atwho/atwho.js,zui/js/zui.js&v=<?php echo ($site["sys_version"]); ?>.js"></script>
-<script type="text/javascript" src="/Public/static/jquery.iframe-transport.js"></script>
+<script src="/my/Public/js.php?t=js&f=js/com/com.notify.class.js,static/qtip/jquery.qtip.js,js/ext/slimscroll/jquery.slimscroll.min.js,js/ext/magnific/jquery.magnific-popup.min.js,js/ext/placeholder/placeholder.js,js/ext/atwho/atwho.js,zui/js/zui.js&v=<?php echo ($site["sys_version"]); ?>.js"></script>
+<script type="text/javascript" src="/my/Public/static/jquery.iframe-transport.js"></script>
 
-<script src="/Public/js/ext/lazyload/lazyload.js"></script>
+<script src="/my/Public/js/ext/lazyload/lazyload.js"></script>
 
 
 

@@ -6,13 +6,13 @@
 <block name="body">
     <style>
         #main-container {
-            width: 960px;
+            /* width: 960px; */
         }
     </style>
     <script type="text/javascript" src="__PUBLIC__/js/ajaxfileupload.js"></script>
     <link href="__CSS__/weibo.css" type="text/css" rel="stylesheet"/>
     <!--微博内容列表部分-->
-    <div class="weibo_middle pull-left" style="width: 660px">
+    <div class="col-xs-12 col-lg-9">
         <include file="_quickweibo"/>
         <!--  筛选部分-->
         <div>
@@ -103,7 +103,7 @@
 
     <!--微博内容列表部分结束-->
     <!--首页右侧部分-->
-    <div class="weibo_right" style="width: 280px">
+    <div class="col-xs-12 col-lg-3 visible-lg">
         <!--登录后显示个人区域-->
         <if condition="is_login()">
             <div class="user-card" style="height: auto;">
