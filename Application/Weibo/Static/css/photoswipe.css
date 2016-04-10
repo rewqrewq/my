@@ -117,7 +117,7 @@
   overflow: hidden; }
 
 .pswp__img {
-  position: absolute;
+  /* position: absolute; */
   width: auto;
   height: auto;
   -webkit-transition: opacity 0.15s;

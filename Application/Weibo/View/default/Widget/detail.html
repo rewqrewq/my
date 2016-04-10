@@ -26,12 +26,12 @@
                 </if>
             </div>
             <div class="" style="padding: 10px 10px 5px 10px">
-                <div class="col-xs-2 text-center" style="position: relative;padding: 0px">
+                <div class="col-md-2 col-sm-2 col-xs-2 text-center" style="position: relative;padding: 0px">
                     <a class="s_avatar" href="{$weibo.user.space_url}" ucard="{$weibo.user.uid}">
                         <img src="{$weibo.user.avatar64}" class="avatar-img" style="width: 64px;"/>
                     </a>
                 </div>
-                <div class="col-xs-10" style="padding: 5px">
+                <div class="col-md-10" style="padding: 5px">
                     <eq name="weibo.is_top" value="1">
                         <div class="ribbion-green"></div>
                     </eq>
@@ -81,6 +81,3 @@
     </div>
 </div>
 </if>
-<script>
-  // alert($('.weibo-comment-container').text());
-</script>

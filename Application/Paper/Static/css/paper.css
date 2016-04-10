@@ -1,8 +1,8 @@
 #main-container,
 .container {
-  width: 1160px !important;
+  /* width: 1160px !important; */
   max-width: 1160px !important;
-  min-width: 1160px !important;
+  /* min-width: 1160px !important; */
 }
 .content {
   margin-left: 0;

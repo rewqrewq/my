@@ -21,20 +21,20 @@
   -webkit-border-radius: 3px;
   -khtml-border-radius: 3px;
   border-radius: 3px;
-  border: 1px solid #dddddd;
+  /* border: 1px solid #dddddd; */
   border-radius: 0.2em;
 }
 /*index页面*/
 .issue_list .item_inner {
   display: inline-block;
-  width: 255px;
-  margin-right: 20px;
+  /* width: 255px; */
+  /* margin-right: 20px; */
   padding: 0;
   border: none;
   background: white;
   padding-bottom: 10px;
   margin-bottom: 20px;
-  border: 1px solid #dddddd;
+ /*  border: 1px solid #dddddd; */
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -khtml-border-radius: 3px;
@@ -81,6 +81,8 @@
 }
 .item_core {
   position: relative;
+	border: 1px #ddd solid;
+	margin: 10px;
 }
 .item_core .cover {
   width: 255px;

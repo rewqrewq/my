@@ -2,6 +2,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+
 {:hook('syncMeta')}
 
 <include file="Public/seo"/>
@@ -10,6 +14,7 @@
 <link href="__ZUI__/css/zui.css" rel="stylesheet">
 
 <link href="__ZUI__/css/zui-theme.css" rel="stylesheet">
+<link href="__ZUI__/css/offcanvas.css" rel="stylesheet">
 <link href="__PUBLIC__/css/core.css" rel="stylesheet"/>
 <link type="text/css" rel="stylesheet" href="__PUBLIC__/js/ext/magnific/magnific-popup.css"/>
 <!--<script src="__PUBLIC__/js/jquery-2.0.3.min.js"></script>
@@ -18,6 +23,30 @@
 <script type="text/javascript" src="__PUBLIC__/js/core.js"></script>-->
 <script src="__PUBLIC__/js.php?f=js/jquery-2.0.3.min.js,js/com/com.functions.js,js/core.js,js/com/com.toast.class.js,js/com/com.ucard.js"></script>
 
+
+<script>
+	
+	var deviceType;
+	$(function() {
+		var userAgentInfo = navigator.userAgent;
+		var Agents = new Array("Android", "iPhone", "SymbianOS", "MeeGo", "Windows Phone", "iPad", "iPod");
+		var flag = false;
+		var v = 0;
+		for (v = 0; v < Agents.length; v++) {
+			if (userAgentInfo.indexOf(Agents[v]) > 0) {
+				flag = true;
+				break;
+			}
+		}
+		
+		if (flag) {
+			deviceType = Agents[v]; // 设备类型
+		} else {
+			deviceType = 'PC';
+		}
+	});
+	
+</script>
 
 
 <block name="style"><!--Style--></block>

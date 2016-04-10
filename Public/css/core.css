@@ -86,7 +86,7 @@
   border-top-right-radius: 5px;
   color: #333333;
   font-size: 1.2em;
-  margin: 5px 0 10px 15px;
+  margin: 5px 0 5px 15px;
   padding-left: 5px;
   margin-left: 5px;
 }
@@ -803,7 +803,7 @@ ul {
 }
 #sub_nav .navbar {
   border: none;
-  background: #4f8ad0;
+  /* background: #4f8ad0; */	background: #4FD0C6;
   color: #ffffff;
 }
 #sub_nav .active > a {
@@ -847,7 +847,7 @@ ul {
 .nav_bar .navbar-nav > li > a {
   line-height: 50px;
   font-size: 14px;
-  padding: 0 10px;
+  padding: 0 7px;
   color: #333333;
 }
 .nav_bar .navbar-nav > li > a i {
@@ -997,8 +997,8 @@ body {
   width: 100%;
   height: 80px;
 }
-.user-card .user-data > div {
-  padding-bottom: 10px;
+.user-card .user-data > div {/* 
+  padding-bottom: 10px; */	padding: 0px;
 }
 .user-card .headpic {
   padding: 0;
@@ -1045,7 +1045,7 @@ a:hover {
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
-}
+}.text-more a {	color: #B4BD83;}
 .boxShadow {
   box-shadow: 0 0 5px #cccccc;
   -moz-box-shadow: 0 0 5px #CCCCCC;
@@ -1192,7 +1192,7 @@ h2 {
   font-size: 1.4em;
   margin: 0;
   padding: 0;
-  margin-bottom: .5em;
+  /* margin-bottom: .5em; */
   /*border-bottom: solid 2px #ccc;*/
   padding-bottom: .5em;
 }
@@ -2014,8 +2014,8 @@ General list for item with image
   margin-bottom: 20px;
 }
 .usercenter .uc_content .uc_other_link > div {
-  margin: 10px;
-  margin-right: 30px;
+  /* margin: 10px;
+  margin-right: 30px; */
   border-radius: 3px;
 }
 .usercenter .uc_content .uc_other_link > div .uc_link_info {

@@ -185,7 +185,7 @@ class IndexController extends BaseController
     public function doSend()
     {
         $aContent = I('post.content', '', 'op_t');
-        $aType = I('post.type', 'feed', 'op_t');
+        $aType = I('post.type', 'feed', 'op_t');        $aFrom = I('post.from', '', 'op_t');
         $aAttachIds = I('post.attach_ids', '', 'op_t');
         $aExtra = I('post.extra', array(), 'convert_url_query');
 
@@ -227,7 +227,7 @@ class IndexController extends BaseController
         if (!empty($aExtra)) $feed_data = array_merge($feed_data, $aExtra);
 
         // 执行发布，写入数据库
-        $weibo_id = send_weibo($aContent, $aType, $feed_data);
+        $weibo_id = send_weibo($aContent, $aType, $feed_data, $aFrom);
         if (!$weibo_id) {
             $this->error(L('_FAIL_PUBLISH_'));
         }

@@ -108,6 +108,8 @@ var send_weibo = function(){
         //获取参数
         var url = $(this).attr('data-url');
         var content = $(this).parents('.weibo_post_box').find('#weibo_content').val();
+        var from = deviceType;
+     
         var button = $(this);
         var originalButtonText = button.val();
         var attach_ids = '';
@@ -119,7 +121,7 @@ var send_weibo = function(){
         if(typeof feedType == 'undefined'){
             feedType = 'feed';
         }
-        $.post(url, {content: content, type: feedType, attach_ids: attach_ids,extra:extra}, function (a) {
+        $.post(url, {content: content, type: feedType, from: from, attach_ids: attach_ids,extra:extra}, function (a) {
             handleAjax(a);
             if (a.status) {
                 button.attr('class', 'btn btn-primary');
@@ -698,6 +700,10 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
     // loop through all gallery elements and bind events
     var galleryElements = document.querySelectorAll( gallerySelector );
+    
+    if(galleryElements.length == 0) {
+    	return;
+    }
 
     for(var i = 0, l = galleryElements.length; i < l; i++) {
         galleryElements[i].setAttribute('data-pswp-uid', i+1);
