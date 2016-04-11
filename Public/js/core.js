@@ -427,6 +427,8 @@ var face_chose = function (obj) {
         textarea.val(s.substring(0, pos) + '[' + obj.attr('title') + ':' + obj.attr('data-type') + ']' + s.substring(pos));
         setCaretPosition(textarea[0], pos + 3 + obj.attr('title').length + obj.attr('data-type').length);
     }
+    
+    close_face();
 
 
 }
@@ -441,15 +443,21 @@ var bind_face_pkg = function () {
 }
 
 
-
+var _imgHtml = '';
 var getFace = function (obj, pkg,page) {
     if (typeof pkg == 'undefined') {
         pkg = '';
     }
+   
+    if(_imgHtml != '获取表情失败' && _imgHtml != '') {
+    	 obj.find('#face').html( _imgHtml);
+         bind_face_pkg();
+    	return;
+    }
     $.post(U('Core/Expression/getSmile'), {pkg: pkg,page:page},function(res) {
             var expression = res.expression;
             var pkgList = res.pkgList;
-            var _imgHtml = '';
+            //var _imgHtml = '';
             if (pkgList.length > 0) {
                 if (pkgList.length > 1) {
                     _imgHtml = "<div class='face-tab'><ul>";
