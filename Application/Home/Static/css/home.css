@@ -76,6 +76,7 @@ a:hover {
 }
 .issue_list .item_inner {
   display: inline-block;
+	width: 100%;
   /* width: 255px; */
   /* margin-right: 20px; */
 	margin-top: 20px;
