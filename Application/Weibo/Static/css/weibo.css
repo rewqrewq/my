@@ -255,7 +255,7 @@
 .weibo_icon {
   position: absolute;
   /* left: -20px; */	right: 0px;
-  top: 10px;
+  /* top: 10px; */	bottom: 40px;
   border-radius: 2px;
   text-align: center;
 }
@@ -263,7 +263,7 @@
   list-style: none;
   width: 20px;
   background: #fff;
-  cursor: pointer;
+  cursor: pointer;	margin-top: 10px;
 }
 .weibo_icon li:hover {
   background: #eeeeee;
