@@ -41,10 +41,10 @@ return array(
 
 /* 数据库配置 */
 'DB_TYPE'   => 'mysqli', // 数据库类型
-'DB_HOST'   => 'afdsafdsa.my3w.com', // 服务器地址
-'DB_NAME'   => 'dsafdsaf', // 数据库名
-'DB_USER'   => 'fdsafdsa', // 用户名
-'DB_PWD'    => 'dsafds',  // 密码
+'DB_HOST'   => 'fdsafds.my3w.com', // 服务器地址
+'DB_NAME'   => 'fdsafsd', // 数据库名
+'DB_USER'   => 'dsafds', // 用户名
+'DB_PWD'    => 'fdsa',  // 密码
 'DB_PORT'   => '3306', // 端口
 'DB_PREFIX' => 'yoy_', // 数据库表前缀
 
